@@ -13,7 +13,7 @@ pnpm add @brixtol/tsutils
 
 # Usage
 
-Import via namespace, the below example shows a couple of utilities. Look in the [#tests]
+Import the module via namespace. The below example shows a couple of utilities. For additional context look in the [test](https://github.com/BRIXTOL/tsutils/tree/master/test) directory.
 
 ```ts
 import { AnyCase, ArrayMin, ConcatUnion } from '@brixtol/tsutils';
