@@ -1,0 +1,34 @@
+{
+  "name": "@brixtol/tsutils",
+  "version": "1.0.0",
+  "description": "Brixtol Textiles commonly used TypeScript utility types",
+  "homepage": "https://liquify.dev",
+  "author": {
+    "name": "Νίκος Σαβίδης ",
+    "email": "n@brixtol.com",
+    "url": "https://brixtoltextiles.com"
+  },
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "prettier": "@brixtol/prettier-config",
+  "eslintConfig": {
+    "ignorePatterns": "package",
+    "extends": "@brixtol/eslint-config",
+    "rules": {
+      "no-use-before-define": "off"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brixtol/tsconfig"
+  },
+  "bugs": {
+    "url": "https://github.com/brixtol/tsconfig"
+  },
+  "devDependencies": {
+    "@brixtol/eslint-config": "workspace:^1.0.1",
+    "@brixtol/prettier-config": "workspace:^1.2.1",
+    "@brixtol/tsconfig": "workspace:^1.0.1",
+    "typescript": "^4.4.4"
+  }
+}
