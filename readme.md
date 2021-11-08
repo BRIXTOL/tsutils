@@ -124,6 +124,35 @@ const union: ConcatUnion<'A' | 'B' | 'C', '-'> = (
 
 ```
 
+#### `KeyofDot<object>`
+
+Deeply references object keys to generate a string literal flattened union that separates each nest property with a `.` dot character.
+
+```ts
+const keyofdot: KeyofDot<{
+  a: string;
+  b: {
+    c: string;
+    d: {
+      e: {
+        f: string;
+        g: string;
+      }[];
+    }
+  }
+> = (
+  | "a"
+  | "b"
+  | "b.c"
+  | "b.d.e"
+  | "b.d"
+  | `b.d.e.${number}.f`
+  | `b.d.e.${number}.g`
+  | `b.d.e.${number}`
+)
+
+```
+
 #### `LiteralUnion<union>`
 
 Allows string types to be passed while respecting intellisense completions.

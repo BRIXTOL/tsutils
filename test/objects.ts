@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 
-import { PartialDeep } from '..';
+import { PartialDeep } from '../types/PartialDeep';
 import { OmitProps } from '../types/OmitProps';
 import { PickProps } from '../types/PickProps';
 import { Valueof } from '../types/Valueof';
+import { KeyofDot } from '../types/KeyofDot';
 
 /* -------------------------------------------- */
 /* OMIT PROPS                                   */
@@ -164,6 +165,8 @@ console.log(
 /* -------------------------------------------- */
 
 interface IObject {
+  one: string;
+  two: string;
   deep: {
     a: string;
     b: string;
@@ -193,3 +196,20 @@ console.log(
   valid_partial_deep,
   invalid_partial_deep
 );
+
+/* -------------------------------------------- */
+/* KEYOF DOT                                    */
+/* -------------------------------------------- */
+
+const valid_keyof: KeyofDot<{
+  a: string;
+  b: {
+    c: string;
+    d: {
+      e: {
+        f: string;
+        g: string;
+      }[];
+    }
+  }
+> = "b"
