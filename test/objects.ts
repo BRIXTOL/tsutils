@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+import { PartialDeep } from '..';
 import { OmitProps } from '../types/OmitProps';
 import { PickProps } from '../types/PickProps';
 import { Valueof } from '../types/Valueof';
@@ -156,4 +157,39 @@ const invalid_valueof: Valueof<{
 console.log(
   valid_valueof,
   invalid_valueof
+);
+
+/* -------------------------------------------- */
+/* PARTIAL DEEP                                 */
+/* -------------------------------------------- */
+
+interface IObject {
+  deep: {
+    a: string;
+    b: string;
+    c: {
+      d: any;
+      e: number;
+      f: {
+        g: string[]
+      }
+    }
+  }
+}
+
+const valid_partial_deep: PartialDeep<IObject> = {
+  deep: {
+    a: 'foo'
+  }
+};
+
+const invalid_partial_deep: IObject = {
+  deep: {
+    a: 'foo'
+  }
+};
+
+console.log(
+  valid_partial_deep,
+  invalid_partial_deep
 );

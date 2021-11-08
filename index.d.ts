@@ -8,5 +8,6 @@ export { LiteralUnion } from './types/LiteralUnion';
 export { NumberRange } from './types/NumberRange';
 export { ObjectEntries } from './types/ObjectEntries';
 export { OmitProps } from './types/OmitProps';
+export { PartialDeep } from './types/PartialDeep';
 export { PickProps } from './types/PickProps';
 export { Valueof } from './types/Valueof';

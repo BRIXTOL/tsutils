@@ -203,6 +203,38 @@ const array: OmitProps<[
 ]
 ```
 
+#### `PartialDeep<object>`
+
+Used to create a type from another type with all keys and nested keys set to optional.
+
+> Lifted from [type-fest](https://github.com/sindresorhus/type-fest/)
+
+<!--prettier-ignore -->
+```ts
+interface IObject {
+  deep: {
+    a: string;
+    b: string;
+    c: {
+      d: any;
+      e: number;
+      f: {
+        g: string[]
+      }
+    }
+  }
+}
+
+// RESULT
+
+const object: PartialDeep<IObject> = {
+  deep: {
+    a: 'foo'
+  }
+};
+
+```
+
 #### `PickProps<string[], object | object[]>`
 
 Used to pick object properties from a string list and will return the selected properties on the object. When passing an `Array` interface type the returning value will be array, else return value is object.
