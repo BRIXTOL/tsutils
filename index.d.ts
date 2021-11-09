@@ -5,6 +5,7 @@ export { ArrayMin } from './types/ArrayMin';
 export { ArrayRange } from './types/ArrayRange';
 export { ConcatUnion } from './types/ConcatUnion';
 export { KeyofDot } from './types/KeyofDot';
+export { KeyPath, Path } from './types/KeyPath';
 export { LiteralUnion } from './types/LiteralUnion';
 export { NumberRange } from './types/NumberRange';
 export { ObjectEntries } from './types/ObjectEntries';

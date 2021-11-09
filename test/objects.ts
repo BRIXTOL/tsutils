@@ -5,6 +5,7 @@ import { OmitProps } from '../types/OmitProps';
 import { PickProps } from '../types/PickProps';
 import { Valueof } from '../types/Valueof';
 import { KeyofDot } from '../types/KeyofDot';
+import { KeyPath } from '../types/KeyPath';
 
 /* -------------------------------------------- */
 /* OMIT PROPS                                   */
@@ -212,4 +213,21 @@ const valid_keyof: KeyofDot<{
       }[];
     }
   }
-> = "b"
+}> = 'b';
+
+/* -------------------------------------------- */
+/* KEYOF DOT                                    */
+/* -------------------------------------------- */
+
+const key_path: KeyPath<'b.d', {
+  a: string;
+  b: {
+    c: string;
+    d: {
+      e: {
+        f: string;
+        g: string;
+      }[];
+    }
+  }
+}> = { e: [] };

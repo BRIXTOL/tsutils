@@ -1,5 +1,9 @@
 ## _CHANGELOG_
 
+#### 09/11/2021 | v1.2.0
+
+- Added `KeyPath` and `Path`
+
 #### 08/11/2021 | v1.2.0
 
 - Added `KeyofDot`
