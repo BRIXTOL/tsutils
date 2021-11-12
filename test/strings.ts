@@ -3,7 +3,7 @@
 import { AnyCase } from '../types/AnyCase';
 import { LiteralUnion } from '../types/LiteralUnion';
 import { ConcatUnion } from '../types/ConcatUnion';
-
+import { Split } from '../types/Split';
 /* -------------------------------------------- */
 /* ANYCASE STRING                               */
 /* -------------------------------------------- */
@@ -95,3 +95,9 @@ console.log(
   literal_union_1,
   literal_union_2
 );
+
+/* -------------------------------------------- */
+/* SPLIT                                        */
+/* -------------------------------------------- */
+
+const split: Split<'a,b,c', ','> = ;

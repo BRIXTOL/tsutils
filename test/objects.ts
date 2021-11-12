@@ -4,8 +4,9 @@ import { PartialDeep } from '../types/PartialDeep';
 import { OmitProps } from '../types/OmitProps';
 import { PickProps } from '../types/PickProps';
 import { Valueof } from '../types/Valueof';
-import { KeyofDot } from '../types/KeyofDot';
-import { KeyPath } from '../types/KeyPath';
+import { JoinProps } from '../types/JoinProps';
+import { Path } from '../types/Path';
+import { PathProps } from '../types/PathProps';
 
 /* -------------------------------------------- */
 /* OMIT PROPS                                   */
@@ -202,7 +203,7 @@ console.log(
 /* KEYOF DOT                                    */
 /* -------------------------------------------- */
 
-const valid_keyof: KeyofDot<{
+const valid_keyof: JoinProps<{
   a: string;
   b: {
     c: string;
@@ -219,15 +220,37 @@ const valid_keyof: KeyofDot<{
 /* KEYOF DOT                                    */
 /* -------------------------------------------- */
 
-const key_path: KeyPath<'b.d', {
+interface IExample {
   a: string;
   b: {
     c: string;
     d: {
       e: {
         f: string;
-        g: string;
+        g: number;
       }[];
     }
   }
-}> = { e: [] };
+}
+
+const example: IExample = {
+  a: 'foo',
+  b: {
+    c: 'bar',
+    d: {
+      e: [
+        { f: 'hello', g: 100 },
+        { f: 'world', g: 200 }
+      ]
+    }
+  }
+} as const;
+
+const path: Path<IExample> = '';
+
+declare function get<
+  T,
+  P extends Path<T>
+>(obj: T, path: P): PathProps<T, P>;
+
+get(example, 'b.d.e');
