@@ -124,12 +124,29 @@ const union: ConcatUnion<'A' | 'B' | 'C', '-'> = (
 
 ```
 
-#### `KeyofDot<object>`
+#### `Join<string, separator>`
 
-Deeply references object keys to generate a string literal flattened union that separates each nest property with a `.` dot character.
+Join an array of strings and/or numbers using the given string as a delimiter. Used for defining key paths in a nested object.
+
+> Lifted from [type-fest](https://git.io/JX5eJ)
 
 ```ts
-const keyofdot: KeyofDot<{
+ // Mixed (strings & numbers) items; result is: 'foo.0.baz'
+const path: Join<['foo', 0, 'baz'], '.'> = 'foo.0.baz';
+ *
+// Only string items; result is: 'foo.bar.baz'
+const path: Join<['foo', 'bar', 'baz'], '.'> = 'foo.bar.baz'
+ *
+// Only number items; result is: '1.2.3'
+const path: Join<[1, 2, 3], '.'> = [1, 2, 3].join('.');
+```
+
+#### `JoinProps<object, separator?>`
+
+Deeply references object keys to generate a string literal flattened union with an option separator character which will default to `.` dot.
+
+```ts
+const props: JoinProps<{
   a: string;
   b: {
     c: string;
@@ -164,6 +181,20 @@ const literal: LiteralUnion<'A' | 'B'> = (
   | 'C'
   | 'D' // D is allowed to pass
 )
+```
+
+#### `Merge<object, object>`
+
+Merge two types into a new type. Keys of the second type overrides keys of the first type.
+
+> Lifted from [type-fest](https://git.io/JX5ua)
+
+<!--prettier-ignore -->
+```ts
+type Foo = { a: number; b: string };
+type Bar = { b: number };
+
+const ab: Merge<Foo, Bar> = { a: 1, b: 2 };
 ```
 
 #### `NumberRange<number, number>`
@@ -299,6 +330,17 @@ const array: OmitProps<[
     baz: { a: 'one' },
   }
 ]
+```
+
+#### `Split<string, separator>`
+
+Represents an array of strings split using a given character or character set. Typically used on a return type method like `String.prototype.split`.
+
+> Lifted from [type-fest](https://git.io/JX7p5)
+
+<!--prettier-ignore -->
+```ts
+const split: Split<'a,b,c,d', ','> = ['a','b','c','d']
 ```
 
 #### `Valueof<object>`
