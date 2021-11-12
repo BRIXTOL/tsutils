@@ -1,5 +1,14 @@
 ## _CHANGELOG_
 
+#### 12/11/2021 | v1.4.0
+
+- Added `Join` - lifted from [type-fest](https://github.com/sindresorhus/type-fest/)
+- Added `Merge` - lifted from [type-fest](https://github.com/sindresorhus/type-fest/)
+- Added `Path` (moved from KeyPath)
+- Added `Split` - lifted from [type-fest](https://github.com/sindresorhus/type-fest/)
+- Renamed `KeyPath` to `PathProps`
+- Renamed `KeyofDot` to `JoinProps`
+
 #### 09/11/2021 | v1.2.0
 
 - Added `KeyPath` and `Path`
