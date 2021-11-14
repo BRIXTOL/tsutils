@@ -1,5 +1,9 @@
 ## _CHANGELOG_
 
+#### 14/11/2021 | v1.4.1
+
+- Fix package url
+
 #### 12/11/2021 | v1.4.0
 
 - Added `Join` - lifted from [type-fest](https://github.com/sindresorhus/type-fest/)

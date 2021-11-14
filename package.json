@@ -1,8 +1,8 @@
 {
   "name": "@brixtol/tsutils",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Brixtol Textiles commonly used TypeScript utility types",
-  "homepage": "https://liquify.dev",
+  "homepage": "https://github.com/BRIXTOL/tsutils",
   "author": {
     "name": "Νίκος Σαβίδης ",
     "email": "n@brixtol.com",
